@@ -448,10 +448,10 @@ Then when building, override the remote URLs that gbuild would otherwise pull fr
 ```bash
 
 cd /some/root/path/
-git clone https://github.com/BTCGPU/bitcoingold-detached-sigs.git
+git clone https://github.com/BTCGPU/newbitcoin-detached-sigs.git
 
 BTCPATH=/some/root/path/BTCGPU
-SIGPATH=/some/root/path/bitcoingold-detached-sigs
+SIGPATH=/some/root/path/newbitcoin-detached-sigs
 
 ./bin/gbuild --url BTCGPU=${BTCPATH},signature=${SIGPATH} ../BTCGPU/contrib/gitian-descriptors/gitian-win-signer.yml
 ```
