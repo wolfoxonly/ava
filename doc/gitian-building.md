@@ -468,9 +468,9 @@ When you execute `gsign` you will get an error from GPG, which can be ignored. C
 in `gitian.sigs` to your signing machine and do
 
 ```bash
-    gpg --detach-sign ${VERSION}-linux/${SIGNER}/bitcoin-gold-linux-build.assert
-    gpg --detach-sign ${VERSION}-win/${SIGNER}/bitcoin-gold-win-build.assert
-    gpg --detach-sign ${VERSION}-osx-unsigned/${SIGNER}/bitcoin-gold-osx-build.assert
+    gpg --detach-sign ${VERSION}-linux/${SIGNER}/newbitcoin-linux-build.assert
+    gpg --detach-sign ${VERSION}-win/${SIGNER}/newbitcoin-win-build.assert
+    gpg --detach-sign ${VERSION}-osx-unsigned/${SIGNER}/newbitcoin-osx-build.assert
 ```
 
 This will create the `.sig` files that can be committed together with the `.assert` files to assert your

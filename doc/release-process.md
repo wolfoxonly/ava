@@ -34,7 +34,7 @@ Check out the source code in the following directory hierarchy.
 
     cd /path/to/your/toplevel/build
     git clone https://github.com/BTCGPU/gitian.sigs.git
-    git clone https://github.com/BTCGPU/bitcoingold-detached-sigs.git
+    git clone https://github.com/BTCGPU/NewBitcoin-detached-sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
     git clone https://github.com/BTCGPU/BTCGPU.git
 
@@ -108,30 +108,30 @@ NOTE: Offline builds must use the --url flag to ensure Gitian fetches only from 
 
 The gbuild invocations below <b>DO NOT DO THIS</b> by default.
 
-### Build and sign Bitcoin Gold for Linux, Windows, and OS X:
+### Build and sign NewBitcoin for Linux, Windows, and OS X:
 
     pushd ./gitian-builder
     ./bin/gbuild --num-make 2 --memory 3000 --commit BTCGPU=v${VERSION} ../BTCGPU/contrib/gitian-descriptors/gitian-linux.yml
     ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../BTCGPU/contrib/gitian-descriptors/gitian-linux.yml
-    mv build/out/bitcoin-gold-*.tar.gz build/out/src/bitcoin-gold-*.tar.gz ../
+    mv build/out/newbitcoin-*.tar.gz build/out/src/newbitcoin-*.tar.gz ../
 
     ./bin/gbuild --num-make 2 --memory 3000 --commit BTCGPU=v${VERSION} ../BTCGPU/contrib/gitian-descriptors/gitian-win.yml
     ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../BTCGPU/contrib/gitian-descriptors/gitian-win.yml
-    mv build/out/bitcoin-gold-*-win-unsigned.tar.gz inputs/bitcoin-gold-win-unsigned.tar.gz
-    mv build/out/bitcoin-gold-*.zip build/out/bitcoin-gold-*.exe ../
+    mv build/out/newbitcoin-*-win-unsigned.tar.gz inputs/newbitcoin-win-unsigned.tar.gz
+    mv build/out/newbitcoin-*.zip build/out/newbitcoin-*.exe ../
 
     ./bin/gbuild --num-make 2 --memory 3000 --commit BTCGPU=v${VERSION} ../BTCGPU/contrib/gitian-descriptors/gitian-osx.yml
     ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../BTCGPU/contrib/gitian-descriptors/gitian-osx.yml
-    mv build/out/bitcoin-gold-*-osx-unsigned.tar.gz inputs/bitcoin-gold-osx-unsigned.tar.gz
-    mv build/out/bitcoin-gold-*.tar.gz build/out/bitcoin-gold-*.dmg ../
+    mv build/out/newbitcoin-*-osx-unsigned.tar.gz inputs/newbitcoin-osx-unsigned.tar.gz
+    mv build/out/newbitcoin-*.tar.gz build/out/newbitcoin-*.dmg ../
     popd
 
 Build output expected:
 
-  1. source tarball (`bitcoin-gold-${VERSION}.tar.gz`)
-  2. linux 32-bit and 64-bit dist tarballs (`bitcoin-gold-${VERSION}-linux[32|64].tar.gz`)
-  3. windows 32-bit and 64-bit unsigned installers and dist zips (`bitcoin-gold-${VERSION}-win[32|64]-setup-unsigned.exe`, `bitcoin-gold-${VERSION}-win[32|64].zip`)
-  4. OS X unsigned installer and dist tarball (`bitcoin-gold-${VERSION}-osx-unsigned.dmg`, `bitcoin-gold-${VERSION}-osx64.tar.gz`)
+  1. source tarball (`newbitcoin-${VERSION}.tar.gz`)
+  2. linux 32-bit and 64-bit dist tarballs (`newbitcoin-${VERSION}-linux[32|64].tar.gz`)
+  3. windows 32-bit and 64-bit unsigned installers and dist zips (`newbitcoin-${VERSION}-win[32|64]-setup-unsigned.exe`, `newbitcoin-${VERSION}-win[32|64].zip`)
+  4. OS X unsigned installer and dist tarball (`newbitcoin-${VERSION}-osx-unsigned.dmg`, `newbitcoin-${VERSION}-osx64.tar.gz`)
   5. Gitian signatures (in `gitian.sigs/${VERSION}-<linux|{win,osx}-unsigned>/(your Gitian key)/`)
 
 ### Verify other gitian builders signatures to your own. (Optional)
@@ -167,22 +167,22 @@ Codesigner only: Create Windows/OS X detached signatures:
 
 Codesigner only: Sign the osx binary:
 
-    transfer bitcoin-gold-osx-unsigned.tar.gz to osx for signing
-    tar xf bitcoin-gold-osx-unsigned.tar.gz
+    transfer newbitcoin-osx-unsigned.tar.gz to osx for signing
+    tar xf newbitcoin-osx-unsigned.tar.gz
     ./detached-sig-create.sh -s "Key ID"
     Enter the keychain password and authorize the signature
     Move signature-osx.tar.gz back to the gitian host
 
 Codesigner only: Sign the windows binaries:
 
-    tar xf bitcoin-gold-win-unsigned.tar.gz
+    tar xf newbitcoin-win-unsigned.tar.gz
     ./detached-sig-create.sh -key /path/to/codesign.key
     Enter the passphrase for the key when prompted
     signature-win.tar.gz will be created
 
 Codesigner only: Commit the detached codesign payloads:
 
-    cd ~/bitcoingold-detached-sigs
+    cd ~/NewBitcoin-detached-sigs
     checkout the appropriate branch for this release series
     rm -rf *
     tar xf signature-osx.tar.gz
@@ -195,7 +195,7 @@ Codesigner only: Commit the detached codesign payloads:
 Non-codesigners: wait for Windows/OS X detached signatures:
 
 - Once the Windows/OS X builds each have 3 matching signatures, they will be signed with their respective release keys.
-- Detached signatures will then be committed to the [bitcoingold-detached-sigs](https://github.com/BTCGPU/bitcoingold-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
+- Detached signatures will then be committed to the [NewBitcoin-detached-sigs](https://github.com/BTCGPU/NewBitcoin-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
 
 Create (and optionally verify) the signed OS X binary:
 
@@ -203,7 +203,7 @@ Create (and optionally verify) the signed OS X binary:
     ./bin/gbuild -i --commit signature=v${VERSION} ../BTCGPU/contrib/gitian-descriptors/gitian-osx-signer.yml
     ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../BTCGPU/contrib/gitian-descriptors/gitian-osx-signer.yml
     ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../BTCGPU/contrib/gitian-descriptors/gitian-osx-signer.yml
-    mv build/out/bitcoin-gold-osx-signed.dmg ../bitcoin-gold-${VERSION}-osx.dmg
+    mv build/out/newbitcoin-osx-signed.dmg ../newbitcoin-${VERSION}-osx.dmg
     popd
 
 Create (and optionally verify) the signed Windows binaries:
@@ -212,8 +212,8 @@ Create (and optionally verify) the signed Windows binaries:
     ./bin/gbuild -i --commit signature=v${VERSION} ../BTCGPU/contrib/gitian-descriptors/gitian-win-signer.yml
     ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../BTCGPU/contrib/gitian-descriptors/gitian-win-signer.yml
     ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../BTCGPU/contrib/gitian-descriptors/gitian-win-signer.yml
-    mv build/out/bitcoin-gold-*win64-setup.exe ../bitcoin-gold-${VERSION}-win64-setup.exe
-    mv build/out/bitcoin-gold-*win32-setup.exe ../bitcoin-gold-${VERSION}-win32-setup.exe
+    mv build/out/newbitcoin-*win64-setup.exe ../newbitcoin-${VERSION}-win64-setup.exe
+    mv build/out/newbitcoin-*win32-setup.exe ../newbitcoin-${VERSION}-win32-setup.exe
     popd
 
 Commit your signature for the signed OS X/Windows binaries:
@@ -235,17 +235,17 @@ sha256sum * > SHA256SUMS
 
 The list of files should be:
 ```
-bitcoin-gold-${VERSION}-aarch64-linux-gnu.tar.gz
-bitcoin-gold-${VERSION}-arm-linux-gnueabihf.tar.gz
-bitcoin-gold-${VERSION}-i686-pc-linux-gnu.tar.gz
-bitcoin-gold-${VERSION}-x86_64-linux-gnu.tar.gz
-bitcoin-gold-${VERSION}-osx64.tar.gz
-bitcoin-gold-${VERSION}-osx.dmg
-bitcoin-gold-${VERSION}.tar.gz
-bitcoin-gold-${VERSION}-win32-setup.exe
-bitcoin-gold-${VERSION}-win32.zip
-bitcoin-gold-${VERSION}-win64-setup.exe
-bitcoin-gold-${VERSION}-win64.zip
+newbitcoin-${VERSION}-aarch64-linux-gnu.tar.gz
+newbitcoin-${VERSION}-arm-linux-gnueabihf.tar.gz
+newbitcoin-${VERSION}-i686-pc-linux-gnu.tar.gz
+newbitcoin-${VERSION}-x86_64-linux-gnu.tar.gz
+newbitcoin-${VERSION}-osx64.tar.gz
+newbitcoin-${VERSION}-osx.dmg
+newbitcoin-${VERSION}.tar.gz
+newbitcoin-${VERSION}-win32-setup.exe
+newbitcoin-${VERSION}-win32.zip
+newbitcoin-${VERSION}-win64-setup.exe
+newbitcoin-${VERSION}-win64.zip
 ```
 The `*-debug*` files generated by the gitian build contain debug symbols
 for troubleshooting by developers. It is assumed that anyone that is interested
@@ -265,11 +265,11 @@ Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spur
 
 - Announce the release:
 
-  - bitcoingold.org
+  - NewBitcoin.org
 
   - Alert to the slack channel
 
-  - Optionally twitter, reddit /r/BitcoinGoldHQ, ... but this will usually sort out itself
+  - Optionally twitter, reddit /r/NewBitcoinHQ, ... but this will usually sort out itself
 
   - Archive release notes for the new version to `doc/release-notes/` (branch `master` and branch of the release)
 

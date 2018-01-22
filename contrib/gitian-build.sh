@@ -312,7 +312,7 @@ then
 	    echo ""
 	    ./bin/gbuild -j ${proc} -m ${mem} --commit BTCGPU=${COMMIT} --url BTCGPU=${url} ../BTCGPU/contrib/gitian-descriptors/gitian-linux.yml
 	    ./bin/gsign -p "${signProg}" --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../BTCGPU/contrib/gitian-descriptors/gitian-linux.yml
-	    mv build/out/bitcoin-gold-*.tar.gz build/out/src/bitcoin-gold-*.tar.gz ../bitcoin-binaries/${VERSION}
+            mv build/out/newbitcoin-*.tar.gz build/out/src/newbitcoin-*.tar.gz ../bitcoin-binaries/${VERSION}
 	fi
 	# Windows
 	if [[ $windows = true ]]
@@ -322,8 +322,8 @@ then
 	    echo ""
 	    ./bin/gbuild -j ${proc} -m ${mem} --commit BTCGPU=${COMMIT} --url BTCGPU=${url} ../BTCGPU/contrib/gitian-descriptors/gitian-win.yml
 	    ./bin/gsign -p "${signProg}" --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../BTCGPU/contrib/gitian-descriptors/gitian-win.yml
-	    mv build/out/bitcoin-gold-*-win-unsigned.tar.gz inputs/bitcoin-gold-win-unsigned.tar.gz
-	    mv build/out/bitcoin-gold-*.zip build/out/bitcoin-gold-*.exe ../bitcoin-binaries/${VERSION}
+            mv build/out/newbitcoin-*-win-unsigned.tar.gz inputs/newbitcoin-win-unsigned.tar.gz
+            mv build/out/newbitcoin-*.zip build/out/newbitcoin-*.exe ../bitcoin-binaries/${VERSION}
 	fi
 	# Mac OSX
 	if [[ $osx = true ]]
@@ -333,8 +333,8 @@ then
 	    echo ""
 	    ./bin/gbuild -j ${proc} -m ${mem} --commit BTCGPU=${COMMIT} --url BTCGPU=${url} ../BTCGPU/contrib/gitian-descriptors/gitian-osx.yml
 	    ./bin/gsign -p "${signProg}" --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../BTCGPU/contrib/gitian-descriptors/gitian-osx.yml
-	    mv build/out/bitcoin-gold-*-osx-unsigned.tar.gz inputs/bitcoin-gold-osx-unsigned.tar.gz
-	    mv build/out/bitcoin-gold-*.tar.gz build/out/bitcoin-gold-*.dmg ../bitcoin-binaries/${VERSION}
+            mv build/out/newbitcoin-*-osx-unsigned.tar.gz inputs/newbitcoin-osx-unsigned.tar.gz
+            mv build/out/newbitcoin-*.tar.gz build/out/newbitcoin-*.dmg ../bitcoin-binaries/${VERSION}
 	fi
 	popd
 
@@ -398,8 +398,8 @@ then
 	    echo ""
 	    ./bin/gbuild -i --commit signature=${COMMIT} --url signature=${detachUrl} ../BTCGPU/contrib/gitian-descriptors/gitian-win-signer.yml
 	    ./bin/gsign -p "${signProg}" --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../BTCGPU/contrib/gitian-descriptors/gitian-win-signer.yml
-	    mv build/out/bitcoin-gold-*win64-setup.exe ../bitcoin-binaries/${VERSION}
-	    mv build/out/bitcoin-gold-*win32-setup.exe ../bitcoin-binaries/${VERSION}
+            mv build/out/newbitcoin-*win64-setup.exe ../bitcoin-binaries/${VERSION}
+            mv build/out/newbitcoin-*win32-setup.exe ../bitcoin-binaries/${VERSION}
 	fi
 	# Sign Mac OSX
 	if [[ $osx = true ]]
@@ -409,7 +409,7 @@ then
 	    echo ""
 	    ./bin/gbuild -i --commit signature=${COMMIT} --url signature=${detachUrl} ../BTCGPU/contrib/gitian-descriptors/gitian-osx-signer.yml
 	    ./bin/gsign -p "${signProg}" --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../BTCGPU/contrib/gitian-descriptors/gitian-osx-signer.yml
-	    mv build/out/bitcoin-gold-osx-signed.dmg ../bitcoin-binaries/${VERSION}/bitcoin-gold-${VERSION}-osx.dmg
+            mv build/out/newbitcoin-osx-signed.dmg ../bitcoin-binaries/${VERSION}/newbitcoin-${VERSION}-osx.dmg
 	fi
 	popd
 

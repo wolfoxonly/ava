@@ -87,7 +87,7 @@
 // Application startup time (used for uptime calculation)
 const int64_t nStartupTime = GetTime();
 
-const char * const BITCOIN_CONF_FILENAME = "bitcoingold.conf";
+const char * const BITCOIN_CONF_FILENAME = "NewBitcoin.conf";
 const char * const BITCOIN_LEGACY_CONF_FILENAME = "bitcoin.conf";
 const char * const BITCOIN_PID_FILENAME = "bgoldd.pid";
 
@@ -526,13 +526,13 @@ void PrintExceptionContinue(const std::exception* pex, const char* pszThread)
 
 fs::path GetDefaultDataDir()
 {
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\BitcoinGold
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\BitcoinGold
-    // Mac: ~/Library/Application Support/BitcoinGold
-    // Unix: ~/.bitcoingold
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\NewBitcoin
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\NewBitcoin
+    // Mac: ~/Library/Application Support/NewBitcoin
+    // Unix: ~/.NewBitcoin
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "BitcoinGold";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "NewBitcoin";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -542,10 +542,10 @@ fs::path GetDefaultDataDir()
         pathRet = fs::path(pszHome);
 #ifdef MAC_OSX
     // Mac
-    return pathRet / "Library/Application Support/BitcoinGold";
+    return pathRet / "Library/Application Support/NewBitcoin";
 #else
     // Unix
-    return pathRet / ".bitcoingold";
+    return pathRet / ".NewBitcoin";
 #endif
 #endif
 }
@@ -612,7 +612,7 @@ void ArgsManager::ReadConfigFileInternal(const std::string& confPath) {
             setOptions.insert("*");
 
             for (boost::program_options::detail::config_file_iterator it(streamConfig, setOptions), end; it != end; ++it) {
-                // Don't overwrite existing settings so command line settings override bitcoingold.conf
+                // Don't overwrite existing settings so command line settings override NewBitcoin.conf
                 std::string strKey = std::string("-") + it->string_key;
                 std::string strValue = it->value[0];
                 InterpretNegativeSetting(strKey, strValue);

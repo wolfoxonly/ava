@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-# Copyright (c) 2017 The Bitcoin Gold developers
+# Copyright (c) 2017 The NewBitcoin developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-"""Test cases for Bitcoin Gold CLTV wallet."""
+"""Test cases for NewBitcoin CLTV wallet."""
 
 import io
 
