@@ -2,7 +2,7 @@
 
 This issue tracker is only for technical issues related to newbitcoin.
 
-For reporting security issues, please see the official [NewBitcoin website](https://bitcoingold.org/).
+For reporting security issues, please see the official [NewBitcoin website](https://newbitcoin.org/).
 
 ### Describe the issue
 
