@@ -81,12 +81,12 @@
     <message>
         <location line="+7"/>
         <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">These are your NewBitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>These are your Bitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">These are your NewBitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -212,7 +212,7 @@
     <message>
         <location line="+1"/>
         <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR NewBitcoinS&lt;/b&gt;!</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -228,7 +228,7 @@
     <message>
         <location line="-56"/>
         <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your NewBitcoins from being stolen by malware infecting your computer.</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -431,7 +431,7 @@
     <message>
         <location line="-510"/>
         <source>Send coins to a Bitcoin address</source>
-        <translation>Send coins to a Bitcoin address</translation>
+        <translation>Send coins to a NewBitcoin address</translation>
     </message>
     <message>
         <location line="+67"/>
@@ -461,7 +461,7 @@
     <message>
         <location line="+516"/>
         <source>Bitcoin</source>
-        <translation>Bitcoin</translation>
+        <translation>NewBitcoin</translation>
     </message>
     <message>
         <location line="-741"/>
@@ -496,12 +496,12 @@
     <message>
         <location line="+7"/>
         <source>Sign messages with your Bitcoin addresses to prove you own them</source>
-        <translation>Sign messages with your Bitcoin addresses to prove you own them</translation>
+        <translation>Sign messages with your NewBitcoin addresses to prove you own them</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
-        <translation>Verify messages to ensure they were signed with specified Bitcoin addresses</translation>
+        <translation>Verify messages to ensure they were signed with specified NewBitcoin addresses</translation>
     </message>
     <message>
         <location line="+58"/>
@@ -526,7 +526,7 @@
     <message>
         <location line="-158"/>
         <source>Request payments (generates QR codes and bitcoin: URIs)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Request payments (generates QR codes and NewBitcoin: URIs)</translation>
     </message>
     <message>
         <location line="+70"/>
@@ -541,7 +541,7 @@
     <message>
         <location line="+3"/>
         <source>Open a bitcoin: URI or payment request</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Open a NewBitcoin: URI or payment request</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -552,8 +552,8 @@
         <location line="+356"/>
         <source>%n active connection(s) to Bitcoin network</source>
         <translation>
-            <numerusform>%n active connection to Bitcoin network</numerusform>
-            <numerusform>%n active connections to Bitcoin network</numerusform>
+            <numerusform>%n active connection to NewBitcoin network</numerusform>
+            <numerusform>%n active connections to NewBitcoin network</numerusform>
         </translation>
     </message>
     <message>
@@ -612,7 +612,7 @@
     <message>
         <location line="-440"/>
         <source>Show the %1 help message to get a list with possible Bitcoin command-line options</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Show the %1 help message to get a list with possible NewBitcoin command-line options</translation>
     </message>
     <message>
         <location line="+199"/>
@@ -692,7 +692,7 @@
     <message>
         <location filename="../bitcoin.cpp" line="+534"/>
         <source>A fatal error occurred. Bitcoin can no longer continue safely and will quit.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A fatal error occurred. NewBitcoin can no longer continue safely and will quit.</translation>
     </message>
 </context>
 <context>
@@ -935,7 +935,7 @@
     <message>
         <location line="+71"/>
         <source>The entered address &quot;%1&quot; is not a valid Bitcoin address.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">The entered address &quot;%1&quot; is not a valid NewBitcoin address.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -1095,7 +1095,7 @@
     <message>
         <location filename="../intro.cpp" line="+20"/>
         <source>Bitcoin</source>
-        <translation type="unfinished">Bitcoin</translation>
+        <translation type="unfinished">NewBitcoin</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -1110,7 +1110,7 @@
     <message>
         <location line="+8"/>
         <source>%1 will download and store a copy of the Bitcoin block chain.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 will download and store a copy of the NewBitcoin block chain.</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -1154,12 +1154,12 @@
     <message>
         <location line="+119"/>
         <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the bitcoin network, as detailed below.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the NewBitcoin network, as detailed below.</translation>
     </message>
     <message>
         <location line="+19"/>
         <source>Attempting to spend bitcoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Attempting to spend NewBitcoins that are affected by not-yet-displayed transactions will not be accepted by the network.</translation>
     </message>
     <message>
         <location line="+63"/>
@@ -1377,7 +1377,7 @@
     <message>
         <location line="+30"/>
         <source>Automatically open the Bitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatically open the Bitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
+        <translation>Automatically open the NewBitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1387,7 +1387,7 @@
     <message>
         <location line="+17"/>
         <source>Connect to the Bitcoin network through a SOCKS5 proxy.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Connect to the NewBitcoin network through a SOCKS5 proxy.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1435,7 +1435,7 @@
     <message>
         <location line="+25"/>
         <source>Connect to the Bitcoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Connect to the NewBitcoin network through a separate SOCKS5 proxy for Tor hidden services.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1580,7 +1580,7 @@
         <location line="+62"/>
         <location line="+386"/>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bitcoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the Bitcoin network after a connection is established, but this process has not completed yet.</translation>
+        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the NewBitcoin network after a connection is established, but this process has not completed yet.</translation>
     </message>
     <message>
         <location line="-139"/>
@@ -1678,7 +1678,7 @@
     <message>
         <location line="-402"/>
         <source>Cannot start bitcoin: click-to-pay handler</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Cannot start NewBitcoin: click-to-pay handler</translation>
     </message>
     <message>
         <location line="+103"/>
@@ -1700,7 +1700,7 @@
     <message>
         <location line="+8"/>
         <source>URI cannot be parsed! This can be caused by an invalid Bitcoin address or malformed URI parameters.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">URI cannot be parsed! This can be caused by an invalid NewBitcoin address or malformed URI parameters.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1822,7 +1822,7 @@
     <message>
         <location filename="../guiutil.cpp" line="+130"/>
         <source>Enter a Bitcoin address (e.g. %1)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Enter a NewBitcoin address (e.g. %1)</translation>
     </message>
     <message>
         <location line="+766"/>
@@ -2408,7 +2408,7 @@
         <location line="+14"/>
         <location line="+23"/>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bitcoin network.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the NewBitcoin network.</translation>
     </message>
     <message>
         <location line="-7"/>
@@ -2706,7 +2706,7 @@
         <location line="+84"/>
         <location line="+13"/>
         <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for bitcoin transactions than the network can process.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for NewBitcoin transactions than the network can process.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2922,7 +2922,7 @@
     <message>
         <location line="+101"/>
         <source>Warning: Invalid Bitcoin address</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Warning: Invalid NewBitcoin address</translation>
     </message>
     <message>
         <location line="+8"/>
@@ -2977,7 +2977,7 @@
     <message>
         <location line="+39"/>
         <source>The Bitcoin address to send the payment to</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">The NewBitcoin address to send the payment to</translation>
     </message>
     <message>
         <location line="+23"/>
@@ -3004,7 +3004,7 @@
     <message>
         <location line="-1021"/>
         <source>The fee will be deducted from the amount being sent. The recipient will receive less bitcoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">The fee will be deducted from the amount being sent. The recipient will receive less NewBitcoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -3034,7 +3034,7 @@
     <message>
         <location line="+47"/>
         <source>A message that was attached to the bitcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Bitcoin network.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A message that was attached to the NewBitcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the NewBitcoin network.</translation>
     </message>
     <message>
         <location line="+448"/>
@@ -3091,12 +3091,12 @@
     <message>
         <location line="+6"/>
         <source>You can sign messages/agreements with your addresses to prove you can receive bitcoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">You can sign messages/agreements with your addresses to prove you can receive NewBitcoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</translation>
     </message>
     <message>
         <location line="+18"/>
         <source>The Bitcoin address to sign the message with</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">The NewBitcoin address to sign the message with</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -3138,7 +3138,7 @@
     <message>
         <location line="+21"/>
         <source>Sign the message to prove you own this Bitcoin address</source>
-        <translation>Sign the message to prove you own this Bitcoin address</translation>
+        <translation>Sign the message to prove you own this NewBitcoin address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -3169,12 +3169,12 @@
     <message>
         <location line="+21"/>
         <source>The Bitcoin address the message was signed with</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">The NewBitcoin address the message was signed with</translation>
     </message>
     <message>
         <location line="+37"/>
         <source>Verify the message to ensure it was signed with the specified Bitcoin address</source>
-        <translation>Verify the message to ensure it was signed with the specified Bitcoin address</translation>
+        <translation>Verify the message to ensure it was signed with the specified NewBitcoin address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -4067,7 +4067,7 @@
     <message>
         <location line="-384"/>
         <source>Bitcoin Core</source>
-        <translation type="unfinished">Bitcoin Core</translation>
+        <translation type="unfinished">NewBitcoin Core</translation>
     </message>
     <message>
         <location line="+1"/>
