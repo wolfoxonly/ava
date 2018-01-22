@@ -62,10 +62,10 @@ qint64 BitcoinUnits::factor(int unit)
 {
     switch(unit)
     {
-    case BTG:  return 100000000;
-    case mBTG: return 100000;
-    case uBTG: return 100;
-    default:   return 100000000;
+    case BTG:  return COIN;
+    case mBTG: return COIN / 1000;
+    case uBTG: return COIN / 1000000;
+    default:   return COIN;
     }
 }
 
