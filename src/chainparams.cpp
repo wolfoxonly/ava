@@ -140,10 +140,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xe1;
-        pchMessageStart[1] = 0x47;
-        pchMessageStart[2] = 0x6d;
-        pchMessageStart[3] = 0x55;
+        pchMessageStart[0] = 0xf9;
+        pchMessageStart[1] = 0xbe;
+        pchMessageStart[2] = 0xb4;
+        pchMessageStart[3] = 0xd9;
         nDefaultPort = 18880; // different port than Bitcoin
         nPruneAfterHeight = 100000;
         const size_t N = 115, K = 6;
