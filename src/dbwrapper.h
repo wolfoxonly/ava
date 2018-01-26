@@ -162,7 +162,7 @@ public:
             ssValue.Xor(dbwrapper_private::GetObfuscateKey(parent));
             ssValue >> value;
         } catch (const std::exception& e) {
-            LogPrintf("%s\n", e.what().c_str());
+            LogPrintf("%s\n", e.what());
             return false;
         }
         return true;
