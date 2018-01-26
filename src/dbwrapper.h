@@ -161,7 +161,8 @@ public:
             CDataStream ssValue(slValue.data(), slValue.data() + slValue.size(), SER_DISK, CLIENT_VERSION);
             ssValue.Xor(dbwrapper_private::GetObfuscateKey(parent));
             ssValue >> value;
-        } catch (const std::exception&) {
+        } catch (const std::exception& e) {
+            LogPrintf("%s\n", e.what().c_str());
             return false;
         }
         return true;
