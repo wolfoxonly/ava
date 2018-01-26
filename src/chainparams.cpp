@@ -161,7 +161,7 @@ public:
         // nodes with support for servicebits filtering should be at the top
 
         vSeeds.emplace_back("newbitcoin.org", false);
-        vSeeds.emplace_back("newbitcoin.vip", false);
+        vSeeds.emplace_back("manghao.com", false);
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,0);  // prefix: 1
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);  // prefix: 3
