@@ -99,8 +99,8 @@ public:
         consensus.BTGHeight = 501225; // Around 10/25/2017 12:00 UTC
         consensus.BTGPremineWindow = 1;
         consensus.BTGPremineEnforceWhitelist = false;
-        consensus.powLimit = uint256S("0007ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.powLimitStart = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.powLimit       = uint256S("01ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.powLimitStart  = uint256S("00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.powLimitLegacy = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         
         //based on https://github.com/BTCGPU/BTCGPU/issues/78
