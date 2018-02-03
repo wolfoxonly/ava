@@ -166,6 +166,7 @@ bool CheckEquihashSolution(const CBlockHeader *pblock, const CChainParams& param
 
 bool CheckProofOfWork(uint256 hash, unsigned int nBits, bool postfork, const Consensus::Params& params)
 {
+    LogPrintf("CheckProofOfWork: %s [%x]", hash.ToString().c_str(), nBits);
     bool fNegative;
     bool fOverflow;
     arith_uint256 bnTarget;
