@@ -25,9 +25,11 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         return BitcoinGetNextWorkRequired(pindexLast, pblock, params);
     }
     else if (nHeight < params.BTGHeight + params.BTGPremineWindow) {
+        LogPrintf("PowDiff1: [%x]\n", nProofOfWorkLimit);
         return nProofOfWorkLimit;
     }
     else if (nHeight < params.BTGHeight + params.BTGPremineWindow + params.nPowAveragingWindow){
+        LogPrintf("PowDiff2: [%x]\n", params.powLimitStart);
         return UintToArith256(params.powLimitStart).GetCompact();
     }
     
