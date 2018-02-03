@@ -25,11 +25,11 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         return BitcoinGetNextWorkRequired(pindexLast, pblock, params);
     }
     else if (nHeight < params.BTGHeight + params.BTGPremineWindow) {
-        LogPrintf("PowDiff1: [%x]\n", nProofOfWorkLimit);
+        //LogPrintf("PowDiff1: [%x]\n", nProofOfWorkLimit);
         return nProofOfWorkLimit;
     }
     else if (nHeight < params.BTGHeight + params.BTGPremineWindow + params.nPowAveragingWindow){
-        LogPrintf("PowDiff2: [%x]\n", params.powLimitStart);
+        //LogPrintf("PowDiff2: [%x]\n", params.powLimitStart);
         return UintToArith256(params.powLimitStart).GetCompact();
     }
     
@@ -168,7 +168,7 @@ bool CheckEquihashSolution(const CBlockHeader *pblock, const CChainParams& param
 
 bool CheckProofOfWork(uint256 hash, unsigned int nBits, bool postfork, const Consensus::Params& params)
 {
-    LogPrintf("CheckProofOfWork: %s [%x]", hash.ToString().c_str(), nBits);
+    //LogPrintf("CheckProofOfWork: %s [%x]", hash.ToString().c_str(), nBits);
     bool fNegative;
     bool fOverflow;
     arith_uint256 bnTarget;
