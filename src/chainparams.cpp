@@ -99,12 +99,12 @@ public:
         consensus.BTGHeight = 501225; // Around 10/25/2017 12:00 UTC
         consensus.BTGPremineWindow = 1;
         consensus.BTGPremineEnforceWhitelist = false;
-        consensus.powLimit       = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.powLimitStart  = uint256S("0fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.powLimit       = uint256S("01ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.powLimitStart  = uint256S("00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.powLimitLegacy = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         
         //based on https://github.com/BTCGPU/BTCGPU/issues/78
-        consensus.nPowAveragingWindow = 2;
+        consensus.nPowAveragingWindow = 30;
         assert(maxUint/UintToArith256(consensus.powLimit) >= consensus.nPowAveragingWindow);
         consensus.nPowMaxAdjustDown = 32;
         consensus.nPowMaxAdjustUp = 16;
@@ -146,7 +146,8 @@ public:
         pchMessageStart[3] = 0xd8;//0xd9
         nDefaultPort = 18880; // different port than Bitcoin
         nPruneAfterHeight = 100000;
-        const size_t N = 200, K = 9;
+        //const size_t N = 200, K = 9;
+        const size_t N = 96, K = 5;
         BOOST_STATIC_ASSERT(equihash_parameters_acceptable(N, K));
         nEquihashN = N;
         nEquihashK = K;
