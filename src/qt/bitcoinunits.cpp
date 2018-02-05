@@ -40,9 +40,9 @@ QString BitcoinUnits::name(int unit)
 {
     switch(unit)
     {
-    case BTG: return QString("BTG");
-    case mBTG: return QString("mBTG");
-    case uBTG: return QString::fromUtf8("μBTG");
+    case BTG: return QString("NBTC");
+    case mBTG: return QString("mNBTC");
+    case uBTG: return QString::fromUtf8("μNBTC");
     default: return QString("???");
     }
 }
@@ -51,9 +51,9 @@ QString BitcoinUnits::description(int unit)
 {
     switch(unit)
     {
-    case BTG: return QString("Bitcoins");
-    case mBTG: return QString("Milli-Bitcoins (1 / 1" THIN_SP_UTF8 "000)");
-    case uBTG: return QString("Micro-Bitcoins (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case BTG: return QString("NewBitcoins");
+    case mBTG: return QString("Milli-NewBitcoins (1 / 1" THIN_SP_UTF8 "000)");
+    case uBTG: return QString("Micro-NewBitcoins (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     default: return QString("???");
     }
 }

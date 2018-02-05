@@ -22,6 +22,6 @@ This is the staging tree of NewBitcoin. If you don’t understand what you are d
 ## Links
 
 * Website: https://newbitcoin.org
-* Tech Spec: https://github.com/BTCGPU/BTCGPU/wiki/Technical-Spec
+* Tech Spec: https://github.com/newbitcoin/newbitcoin/wiki/Technical-Spec
 * Forum: https://forum.newbitcoin.org
 * Discord: [invitation](https://discord.gg/HmVUU6S)

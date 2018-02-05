@@ -521,7 +521,7 @@ std::string HelpMessage(HelpMessageMode mode)
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/BTCGPU/BTCGPU>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/newbitcoin/newbitcoin>";
     const std::string URL_WEBSITE = "<https://newbitcoin.org>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i-%i"), 2009, COPYRIGHT_YEAR) + " ") + "\n" +
