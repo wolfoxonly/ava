@@ -15,7 +15,7 @@ std::string FormatMoney(const CAmount& n)
     // localized number formatting.
     int64_t n_abs = (n > 0 ? n : -n);
     int64_t quotient = n_abs/COIN;
-    int64_t remainder = n_abs%COIN;
+    int64_t remainder = (n_abs%COIN) * COIN_SCALE;
     std::string str = strprintf("%d.%08d", quotient, remainder);
 
     // Right-trim excess zeros before the decimal point:
