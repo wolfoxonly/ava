@@ -166,7 +166,7 @@ bool BitcoinUnits::parse(int unit, const QString &value, CAmount *val_out)
     CAmount retvalue(str.toLongLong(&ok));
     if(val_out)
     {
-        *val_out = retvalue;
+        *val_out = retvalue / COIN_SCALE;
     }
     return ok;
 }
