@@ -15,9 +15,9 @@ AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
 
 BITCOIN_DAEMON_NAME=newbitcoind
-BITCOIN_GUI_NAME=bitcoin-qt
+BITCOIN_GUI_NAME=newbitcoin-qt
 BITCOIN_CLI_NAME=newbitcoin-cli
-BITCOIN_TX_NAME=bitcoin-tx
+BITCOIN_TX_NAME=newbitcoin-tx
 
 dnl Unless the user specified ARFLAGS, force it to be cr
 AC_ARG_VAR(ARFLAGS, [Flags for the archiver, defaults to <cr> if not set])
