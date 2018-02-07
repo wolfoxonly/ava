@@ -228,7 +228,7 @@ bool Intro::pickDataDirectory()
     }
     /* Only override -datadir if different from the default, to make it possible to
      * override -datadir in the newbitcoin.conf file in the default data directory
-     * (to be consistent with bgoldd behavior)
+     * (to be consistent with newbitcoind behavior)
      */
     if(dataDir != getDefaultDataDirectory())
         gArgs.SoftSetArg("-datadir", GUIUtil::qstringToBoostPath(dataDir).string()); // use OS locale for path setting

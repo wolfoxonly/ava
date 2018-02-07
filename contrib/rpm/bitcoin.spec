@@ -202,7 +202,7 @@ OPTIONS=""
 # Don't change these unless you know what you're doing.
 CONFIG_FILE="%{_sysconfdir}/bitcoin/newbitcoin.conf"
 DATA_DIR="%{_localstatedir}/lib/bitcoin"
-PID_FILE="/run/bitcoind/bgoldd.pid"
+PID_FILE="/run/bitcoind/newbitcoind.pid"
 EOF
 touch -a -m -t 201504280000 %{buildroot}%{_sysconfdir}/sysconfig/bitcoin
 

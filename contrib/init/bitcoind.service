@@ -7,8 +7,8 @@ User=bitcoin
 Group=bitcoin
 
 Type=forking
-PIDFile=/var/lib/bitcoind/bgoldd.pid
-ExecStart=/usr/bin/bitcoind -daemon -pid=/var/lib/bitcoind/bgoldd.pid \
+PIDFile=/var/lib/bitcoind/newbitcoind.pid
+ExecStart=/usr/bin/bitcoind -daemon -pid=/var/lib/bitcoind/newbitcoind.pid \
 -conf=/etc/bitcoin/newbitcoin.conf -datadir=/var/lib/bitcoind -disablewallet
 
 Restart=always
