@@ -120,7 +120,7 @@ CAmount AmountFromValue(const UniValue& value)
         throw JSONRPCError(RPC_TYPE_ERROR, "Invalid amount");
     if (!MoneyRange(amount))
         throw JSONRPCError(RPC_TYPE_ERROR, "Amount out of range");
-    return amount;
+    return amount / COIN_SCALE;
 }
 
 uint256 ParseHashV(const UniValue& v, std::string strName)

@@ -715,7 +715,7 @@ bool ParseFixedPoint(const std::string &val, int decimals, int64_t *amount_out)
         return false; /* overflow */
 
     if (amount_out)
-        *amount_out = mantissa / COIN_SCALE;
+        *amount_out = mantissa;
 
     return true;
 }
