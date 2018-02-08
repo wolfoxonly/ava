@@ -146,8 +146,8 @@ public:
         pchMessageStart[3] = 0xd8;//0xd9
         nDefaultPort = 18880; // different port than Bitcoin
         nPruneAfterHeight = 100000;
-        //const size_t N = 200, K = 9;
-        const size_t N = 96, K = 5;
+        const size_t N = 200, K = 9;
+        //const size_t N = 96, K = 5;
         BOOST_STATIC_ASSERT(equihash_parameters_acceptable(N, K));
         nEquihashN = N;
         nEquihashK = K;
