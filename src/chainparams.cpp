@@ -164,10 +164,16 @@ public:
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
 
-        vSeeds.emplace_back("1.avaloncoin.org", false);
-        vSeeds.emplace_back("2.avaloncoin.org", false);
-        vSeeds.emplace_back("3.avaloncoin.org", false);
-        vSeeds.emplace_back("4.avaloncoin.org", false);
+        vSeeds.emplace_back("1.avaloncoin.io", false);
+        vSeeds.emplace_back("2.avaloncoin.io", false);
+        vSeeds.emplace_back("3.avaloncoin.io", false);
+        vSeeds.emplace_back("4.avaloncoin.io", false);
+        vSeeds.emplace_back("5.avaloncoin.io", false);
+        vSeeds.emplace_back("1.avaloncoin.net", false);
+        vSeeds.emplace_back("2.avaloncoin.net", false);
+        vSeeds.emplace_back("3.avaloncoin.net", false);
+        vSeeds.emplace_back("4.avaloncoin.net", false);
+        vSeeds.emplace_back("5.avaloncoin.net", false);
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,0);  // prefix: 1
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);  // prefix: 3
