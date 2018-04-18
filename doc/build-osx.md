@@ -24,10 +24,10 @@ If you want to build the disk image with `make deploy` (.dmg / optional), you ne
 
 NOTE: Building with Qt4 is still supported, however, could result in a broken UI. Building with Qt5 is recommended.
 
-Build NewBitcoin
+Build avaloncoin
 ------------------------
 
-1. Clone the NewBitcoin source code and cd into `avaloncoin`
+1. Clone the avaloncoin source code and cd into `avaloncoin`
 
         git clone https://github.com/avaloncoin/avaloncoin
         cd avaloncoin
@@ -53,19 +53,19 @@ Build NewBitcoin
 Running
 -------
 
-NewBitcoin is now available at `./src/avaloncoind`
+avaloncoin is now available at `./src/avaloncoind`
 
 Before running, it's recommended you create an RPC configuration file.
 
-    echo -e "rpcuser=bitcoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "$HOME/Library/Application Support/NewBitcoin/NewBitcoin.conf"
+    echo -e "rpcuser=bitcoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "$HOME/Library/Application Support/avaloncoin/avaloncoin.conf"
 
-    chmod 600 "$HOME/Library/Application Support/NewBitcoin/NewBitcoin.conf"
+    chmod 600 "$HOME/Library/Application Support/avaloncoin/avaloncoin.conf"
 
 The first time you run avaloncoind, it will start downloading the blockchain. This process could take several hours.
 
 You can monitor the download process by looking at the debug.log file:
 
-    tail -f $HOME/Library/Application\ Support/NewBitcoin/debug.log
+    tail -f $HOME/Library/Application\ Support/avaloncoin/debug.log
 
 Other commands:
 -------

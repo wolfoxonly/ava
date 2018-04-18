@@ -240,11 +240,11 @@ UniValue stop(const JSONRPCRequest& jsonRequest)
     if (jsonRequest.fHelp || jsonRequest.params.size() > 1)
         throw std::runtime_error(
             "stop\n"
-            "\nStop NewBitcoin server.");
+            "\nStop avaloncoin server.");
     // Event loop will exit after current HTTP requests have been handled, so
     // this reply will get back to the client.
     StartShutdown();
-    return "NewBitcoin server stopping";
+    return "avaloncoin server stopping";
 }
 
 UniValue uptime(const JSONRPCRequest& jsonRequest)

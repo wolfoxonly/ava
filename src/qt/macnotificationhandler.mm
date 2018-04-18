@@ -13,7 +13,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"org.bitcoingpu.NewBitcoin-Qt";
+        return @"org.bitcoingpu.avaloncoin-Qt";
     } else {
         return [self __bundleIdentifier];
     }

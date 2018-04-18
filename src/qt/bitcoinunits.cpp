@@ -51,9 +51,9 @@ QString BitcoinUnits::description(int unit)
 {
     switch(unit)
     {
-    case BTG: return QString("NewBitcoins");
-    case mBTG: return QString("Milli-NewBitcoins (1 / 1" THIN_SP_UTF8 "000)");
-    case uBTG: return QString("Micro-NewBitcoins (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case BTG: return QString("avaloncoins");
+    case mBTG: return QString("Milli-avaloncoins (1 / 1" THIN_SP_UTF8 "000)");
+    case uBTG: return QString("Micro-avaloncoins (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     default: return QString("???");
     }
 }
