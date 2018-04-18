@@ -175,8 +175,8 @@ public:
         vSeeds.emplace_back("4.avaloncoin.net", false);
         vSeeds.emplace_back("5.avaloncoin.net", false);
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,0);  // prefix: 1
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);  // prefix: 3
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,23);  // prefix: A
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,83);  // prefix: a
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,128);
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x1E};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
