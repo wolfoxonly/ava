@@ -66,11 +66,11 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += newbitcoind
+  bin_PROGRAMS += avaloncoind
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += newbitcoin-cli newbitcoin-tx
+  bin_PROGRAMS += avaloncoin-cli avaloncoin-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
@@ -370,16 +370,16 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # bitcoind binary #
-newbitcoind_SOURCES = bitcoind.cpp
-newbitcoind_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-newbitcoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-newbitcoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+avaloncoind_SOURCES = bitcoind.cpp
+avaloncoind_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+avaloncoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+avaloncoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-newbitcoind_SOURCES += bitcoind-res.rc
+avaloncoind_SOURCES += bitcoind-res.rc
 endif
 
-newbitcoind_LDADD = \
+avaloncoind_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBUNIVALUE) \
@@ -393,19 +393,19 @@ newbitcoind_LDADD = \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
 
-newbitcoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(LIBEQUIHASH_LIBS)
+avaloncoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(LIBEQUIHASH_LIBS)
 
 # bitcoin-cli binary #
-newbitcoin_cli_SOURCES = bitcoin-cli.cpp
-newbitcoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-newbitcoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-newbitcoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+avaloncoin_cli_SOURCES = bitcoin-cli.cpp
+avaloncoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+avaloncoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+avaloncoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-newbitcoin_cli_SOURCES += bitcoin-cli-res.rc
+avaloncoin_cli_SOURCES += bitcoin-cli-res.rc
 endif
 
-newbitcoin_cli_LDADD = \
+avaloncoin_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_CONSENSUS) \
@@ -414,20 +414,20 @@ newbitcoin_cli_LDADD = \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO)
 
-newbitcoin_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS) $(LIBEQUIHASH_LIBS)
+avaloncoin_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS) $(LIBEQUIHASH_LIBS)
 #
 
 # bitcoin-tx binary #
-newbitcoin_tx_SOURCES = bitcoin-tx.cpp
-newbitcoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-newbitcoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-newbitcoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+avaloncoin_tx_SOURCES = bitcoin-tx.cpp
+avaloncoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+avaloncoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+avaloncoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-newbitcoin_tx_SOURCES += bitcoin-tx-res.rc
+avaloncoin_tx_SOURCES += bitcoin-tx-res.rc
 endif
 
-newbitcoin_tx_LDADD = \
+avaloncoin_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
@@ -436,7 +436,7 @@ newbitcoin_tx_LDADD = \
   $(LIBSECP256K1) \
   $(LIBEQUIHASH_LIBS)
 
-newbitcoin_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
+avaloncoin_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
 # bitcoinconsensus library #

@@ -8,16 +8,16 @@ define(_CLIENT_VERSION_IS_RELEASE, true)
 define(_COPYRIGHT_YEAR, 2018)
 define(_COPYRIGHT_HOLDERS,[The %s developers])
 define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[avaloncoin]])
-AC_INIT([avaloncoin],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/newbitcoin/newbitcoin/issues],[newbitcoin],[https://newbitcoin.org/])
+AC_INIT([avaloncoin],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/avaloncoin/avaloncoin/issues],[avaloncoin],[https://avaloncoin.org/])
 AC_CONFIG_SRCDIR([src/validation.cpp])
 AC_CONFIG_HEADERS([src/config/bitcoin-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
 
-BITCOIN_DAEMON_NAME=newbitcoind
-BITCOIN_GUI_NAME=newbitcoin-qt
-BITCOIN_CLI_NAME=newbitcoin-cli
-BITCOIN_TX_NAME=newbitcoin-tx
+BITCOIN_DAEMON_NAME=avaloncoind
+BITCOIN_GUI_NAME=avaloncoin-qt
+BITCOIN_CLI_NAME=avaloncoin-cli
+BITCOIN_TX_NAME=avaloncoin-tx
 
 dnl Unless the user specified ARFLAGS, force it to be cr
 AC_ARG_VAR(ARFLAGS, [Flags for the archiver, defaults to <cr> if not set])

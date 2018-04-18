@@ -19,7 +19,7 @@ VERSION=
 commit=false
 url=https://github.com/avaloncoin/avaloncoin
 gsigsUrl=https://github.com/avaloncoin/gitian.sigs
-detachUrl=https://github.com/avaloncoin/newbitcoin-detached-sigs
+detachUrl=https://github.com/avaloncoin/avaloncoin-detached-sigs
 proc=2
 mem=2000
 lxc=true
@@ -33,7 +33,7 @@ commitFiles=true
 read -d '' usage <<- EOF
 Usage: $scriptName [-c|u|v|b|s|B|o|h|j|m|] signer version
 
-Run this script from the directory containing the bitcoin, gitian-builder, gitian.sigs, and newbitcoin-detached-sigs.
+Run this script from the directory containing the bitcoin, gitian-builder, gitian.sigs, and avaloncoin-detached-sigs.
 
 Arguments:
 signer          GPG signer to sign each build assert file
@@ -41,9 +41,9 @@ version		Version number, commit, or branch to build. If building a commit or bra
 
 Options:
 -c|--commit	Indicate that the version argument is for a commit or branch
--u|--url	Specify the URL of the newbitcoin repository. Default is https://github.com/avaloncoin/avaloncoin
+-u|--url	Specify the URL of the avaloncoin repository. Default is https://github.com/avaloncoin/avaloncoin
 -g|--gsigsUrl	Specify the URL of the gitian.sigs repository. Default is https://github.com/avaloncoin/gitian.sigs
--d|--detachUrl	Specify the URL of the newbitcoin-detached-sigs repository. Default is https://github.com/avaloncoin/newbitcoin-detached-sigs
+-d|--detachUrl	Specify the URL of the avaloncoin-detached-sigs repository. Default is https://github.com/avaloncoin/avaloncoin-detached-sigs
 -v|--verify 	Verify the Gitian build
 -b|--build	Do a Gitian build
 -s|--sign	Make signed binaries for Windows and Mac OSX
@@ -267,7 +267,7 @@ then
 
     if [[ $detachUrl =~ $urlRegex ]]
     then
-    	git clone $detachUrl newbitcoin-detached-sigs
+    	git clone $detachUrl avaloncoin-detached-sigs
     fi
 
     git clone https://github.com/devrandom/gitian-builder.git
@@ -312,7 +312,7 @@ then
 	    echo ""
 	    ./bin/gbuild -j ${proc} -m ${mem} --commit avaloncoin=${COMMIT} --url avaloncoin=${url} ../avaloncoin/contrib/gitian-descriptors/gitian-linux.yml
 	    ./bin/gsign -p "${signProg}" --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../avaloncoin/contrib/gitian-descriptors/gitian-linux.yml
-            mv build/out/newbitcoin-*.tar.gz build/out/src/newbitcoin-*.tar.gz ../bitcoin-binaries/${VERSION}
+            mv build/out/avaloncoin-*.tar.gz build/out/src/avaloncoin-*.tar.gz ../bitcoin-binaries/${VERSION}
 	fi
 	# Windows
 	if [[ $windows = true ]]
@@ -322,8 +322,8 @@ then
 	    echo ""
 	    ./bin/gbuild -j ${proc} -m ${mem} --commit avaloncoin=${COMMIT} --url avaloncoin=${url} ../avaloncoin/contrib/gitian-descriptors/gitian-win.yml
 	    ./bin/gsign -p "${signProg}" --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../avaloncoin/contrib/gitian-descriptors/gitian-win.yml
-            mv build/out/newbitcoin-*-win-unsigned.tar.gz inputs/newbitcoin-win-unsigned.tar.gz
-            mv build/out/newbitcoin-*.zip build/out/newbitcoin-*.exe ../bitcoin-binaries/${VERSION}
+            mv build/out/avaloncoin-*-win-unsigned.tar.gz inputs/avaloncoin-win-unsigned.tar.gz
+            mv build/out/avaloncoin-*.zip build/out/avaloncoin-*.exe ../bitcoin-binaries/${VERSION}
 	fi
 	# Mac OSX
 	if [[ $osx = true ]]
@@ -333,8 +333,8 @@ then
 	    echo ""
 	    ./bin/gbuild -j ${proc} -m ${mem} --commit avaloncoin=${COMMIT} --url avaloncoin=${url} ../avaloncoin/contrib/gitian-descriptors/gitian-osx.yml
 	    ./bin/gsign -p "${signProg}" --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../avaloncoin/contrib/gitian-descriptors/gitian-osx.yml
-            mv build/out/newbitcoin-*-osx-unsigned.tar.gz inputs/newbitcoin-osx-unsigned.tar.gz
-            mv build/out/newbitcoin-*.tar.gz build/out/newbitcoin-*.dmg ../bitcoin-binaries/${VERSION}
+            mv build/out/avaloncoin-*-osx-unsigned.tar.gz inputs/avaloncoin-osx-unsigned.tar.gz
+            mv build/out/avaloncoin-*.tar.gz build/out/avaloncoin-*.dmg ../bitcoin-binaries/${VERSION}
 	fi
 	popd
 
@@ -398,8 +398,8 @@ then
 	    echo ""
 	    ./bin/gbuild -i --commit signature=${COMMIT} --url signature=${detachUrl} ../avaloncoin/contrib/gitian-descriptors/gitian-win-signer.yml
 	    ./bin/gsign -p "${signProg}" --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../avaloncoin/contrib/gitian-descriptors/gitian-win-signer.yml
-            mv build/out/newbitcoin-*win64-setup.exe ../bitcoin-binaries/${VERSION}
-            mv build/out/newbitcoin-*win32-setup.exe ../bitcoin-binaries/${VERSION}
+            mv build/out/avaloncoin-*win64-setup.exe ../bitcoin-binaries/${VERSION}
+            mv build/out/avaloncoin-*win32-setup.exe ../bitcoin-binaries/${VERSION}
 	fi
 	# Sign Mac OSX
 	if [[ $osx = true ]]
@@ -409,7 +409,7 @@ then
 	    echo ""
 	    ./bin/gbuild -i --commit signature=${COMMIT} --url signature=${detachUrl} ../avaloncoin/contrib/gitian-descriptors/gitian-osx-signer.yml
 	    ./bin/gsign -p "${signProg}" --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../avaloncoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-            mv build/out/newbitcoin-osx-signed.dmg ../bitcoin-binaries/${VERSION}/newbitcoin-${VERSION}-osx.dmg
+            mv build/out/avaloncoin-osx-signed.dmg ../bitcoin-binaries/${VERSION}/avaloncoin-${VERSION}-osx.dmg
 	fi
 	popd
 

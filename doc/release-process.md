@@ -113,25 +113,25 @@ The gbuild invocations below <b>DO NOT DO THIS</b> by default.
     pushd ./gitian-builder
     ./bin/gbuild --num-make 2 --memory 3000 --commit avaloncoin=v${VERSION} ../avaloncoin/contrib/gitian-descriptors/gitian-linux.yml
     ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../avaloncoin/contrib/gitian-descriptors/gitian-linux.yml
-    mv build/out/newbitcoin-*.tar.gz build/out/src/newbitcoin-*.tar.gz ../
+    mv build/out/avaloncoin-*.tar.gz build/out/src/avaloncoin-*.tar.gz ../
 
     ./bin/gbuild --num-make 2 --memory 3000 --commit avaloncoin=v${VERSION} ../avaloncoin/contrib/gitian-descriptors/gitian-win.yml
     ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../avaloncoin/contrib/gitian-descriptors/gitian-win.yml
-    mv build/out/newbitcoin-*-win-unsigned.tar.gz inputs/newbitcoin-win-unsigned.tar.gz
-    mv build/out/newbitcoin-*.zip build/out/newbitcoin-*.exe ../
+    mv build/out/avaloncoin-*-win-unsigned.tar.gz inputs/avaloncoin-win-unsigned.tar.gz
+    mv build/out/avaloncoin-*.zip build/out/avaloncoin-*.exe ../
 
     ./bin/gbuild --num-make 2 --memory 3000 --commit avaloncoin=v${VERSION} ../avaloncoin/contrib/gitian-descriptors/gitian-osx.yml
     ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../avaloncoin/contrib/gitian-descriptors/gitian-osx.yml
-    mv build/out/newbitcoin-*-osx-unsigned.tar.gz inputs/newbitcoin-osx-unsigned.tar.gz
-    mv build/out/newbitcoin-*.tar.gz build/out/newbitcoin-*.dmg ../
+    mv build/out/avaloncoin-*-osx-unsigned.tar.gz inputs/avaloncoin-osx-unsigned.tar.gz
+    mv build/out/avaloncoin-*.tar.gz build/out/avaloncoin-*.dmg ../
     popd
 
 Build output expected:
 
-  1. source tarball (`newbitcoin-${VERSION}.tar.gz`)
-  2. linux 32-bit and 64-bit dist tarballs (`newbitcoin-${VERSION}-linux[32|64].tar.gz`)
-  3. windows 32-bit and 64-bit unsigned installers and dist zips (`newbitcoin-${VERSION}-win[32|64]-setup-unsigned.exe`, `newbitcoin-${VERSION}-win[32|64].zip`)
-  4. OS X unsigned installer and dist tarball (`newbitcoin-${VERSION}-osx-unsigned.dmg`, `newbitcoin-${VERSION}-osx64.tar.gz`)
+  1. source tarball (`avaloncoin-${VERSION}.tar.gz`)
+  2. linux 32-bit and 64-bit dist tarballs (`avaloncoin-${VERSION}-linux[32|64].tar.gz`)
+  3. windows 32-bit and 64-bit unsigned installers and dist zips (`avaloncoin-${VERSION}-win[32|64]-setup-unsigned.exe`, `avaloncoin-${VERSION}-win[32|64].zip`)
+  4. OS X unsigned installer and dist tarball (`avaloncoin-${VERSION}-osx-unsigned.dmg`, `avaloncoin-${VERSION}-osx64.tar.gz`)
   5. Gitian signatures (in `gitian.sigs/${VERSION}-<linux|{win,osx}-unsigned>/(your Gitian key)/`)
 
 ### Verify other gitian builders signatures to your own. (Optional)
@@ -167,15 +167,15 @@ Codesigner only: Create Windows/OS X detached signatures:
 
 Codesigner only: Sign the osx binary:
 
-    transfer newbitcoin-osx-unsigned.tar.gz to osx for signing
-    tar xf newbitcoin-osx-unsigned.tar.gz
+    transfer avaloncoin-osx-unsigned.tar.gz to osx for signing
+    tar xf avaloncoin-osx-unsigned.tar.gz
     ./detached-sig-create.sh -s "Key ID"
     Enter the keychain password and authorize the signature
     Move signature-osx.tar.gz back to the gitian host
 
 Codesigner only: Sign the windows binaries:
 
-    tar xf newbitcoin-win-unsigned.tar.gz
+    tar xf avaloncoin-win-unsigned.tar.gz
     ./detached-sig-create.sh -key /path/to/codesign.key
     Enter the passphrase for the key when prompted
     signature-win.tar.gz will be created
@@ -203,7 +203,7 @@ Create (and optionally verify) the signed OS X binary:
     ./bin/gbuild -i --commit signature=v${VERSION} ../avaloncoin/contrib/gitian-descriptors/gitian-osx-signer.yml
     ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../avaloncoin/contrib/gitian-descriptors/gitian-osx-signer.yml
     ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../avaloncoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-    mv build/out/newbitcoin-osx-signed.dmg ../newbitcoin-${VERSION}-osx.dmg
+    mv build/out/avaloncoin-osx-signed.dmg ../avaloncoin-${VERSION}-osx.dmg
     popd
 
 Create (and optionally verify) the signed Windows binaries:
@@ -212,8 +212,8 @@ Create (and optionally verify) the signed Windows binaries:
     ./bin/gbuild -i --commit signature=v${VERSION} ../avaloncoin/contrib/gitian-descriptors/gitian-win-signer.yml
     ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../avaloncoin/contrib/gitian-descriptors/gitian-win-signer.yml
     ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../avaloncoin/contrib/gitian-descriptors/gitian-win-signer.yml
-    mv build/out/newbitcoin-*win64-setup.exe ../newbitcoin-${VERSION}-win64-setup.exe
-    mv build/out/newbitcoin-*win32-setup.exe ../newbitcoin-${VERSION}-win32-setup.exe
+    mv build/out/avaloncoin-*win64-setup.exe ../avaloncoin-${VERSION}-win64-setup.exe
+    mv build/out/avaloncoin-*win32-setup.exe ../avaloncoin-${VERSION}-win32-setup.exe
     popd
 
 Commit your signature for the signed OS X/Windows binaries:
@@ -235,17 +235,17 @@ sha256sum * > SHA256SUMS
 
 The list of files should be:
 ```
-newbitcoin-${VERSION}-aarch64-linux-gnu.tar.gz
-newbitcoin-${VERSION}-arm-linux-gnueabihf.tar.gz
-newbitcoin-${VERSION}-i686-pc-linux-gnu.tar.gz
-newbitcoin-${VERSION}-x86_64-linux-gnu.tar.gz
-newbitcoin-${VERSION}-osx64.tar.gz
-newbitcoin-${VERSION}-osx.dmg
-newbitcoin-${VERSION}.tar.gz
-newbitcoin-${VERSION}-win32-setup.exe
-newbitcoin-${VERSION}-win32.zip
-newbitcoin-${VERSION}-win64-setup.exe
-newbitcoin-${VERSION}-win64.zip
+avaloncoin-${VERSION}-aarch64-linux-gnu.tar.gz
+avaloncoin-${VERSION}-arm-linux-gnueabihf.tar.gz
+avaloncoin-${VERSION}-i686-pc-linux-gnu.tar.gz
+avaloncoin-${VERSION}-x86_64-linux-gnu.tar.gz
+avaloncoin-${VERSION}-osx64.tar.gz
+avaloncoin-${VERSION}-osx.dmg
+avaloncoin-${VERSION}.tar.gz
+avaloncoin-${VERSION}-win32-setup.exe
+avaloncoin-${VERSION}-win32.zip
+avaloncoin-${VERSION}-win64-setup.exe
+avaloncoin-${VERSION}-win64.zip
 ```
 The `*-debug*` files generated by the gitian build contain debug symbols
 for troubleshooting by developers. It is assumed that anyone that is interested

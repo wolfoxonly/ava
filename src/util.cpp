@@ -87,9 +87,9 @@
 // Application startup time (used for uptime calculation)
 const int64_t nStartupTime = GetTime();
 
-const char * const BITCOIN_CONF_FILENAME = "newbitcoin.conf";
+const char * const BITCOIN_CONF_FILENAME = "avaloncoin.conf";
 const char * const BITCOIN_LEGACY_CONF_FILENAME = "bitcoin.conf";
-const char * const BITCOIN_PID_FILENAME = "newbitcoind.pid";
+const char * const BITCOIN_PID_FILENAME = "avaloncoind.pid";
 
 ArgsManager gArgs;
 bool fPrintToConsole = false;

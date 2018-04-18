@@ -227,8 +227,8 @@ bool Intro::pickDataDirectory()
         settings.setValue("fReset", false);
     }
     /* Only override -datadir if different from the default, to make it possible to
-     * override -datadir in the newbitcoin.conf file in the default data directory
-     * (to be consistent with newbitcoind behavior)
+     * override -datadir in the avaloncoin.conf file in the default data directory
+     * (to be consistent with avaloncoind behavior)
      */
     if(dataDir != getDefaultDataDirectory())
         gArgs.SoftSetArg("-datadir", GUIUtil::qstringToBoostPath(dataDir).string()); // use OS locale for path setting

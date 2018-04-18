@@ -7,9 +7,9 @@ User=bitcoin
 Group=bitcoin
 
 Type=forking
-PIDFile=/var/lib/bitcoind/newbitcoind.pid
-ExecStart=/usr/bin/bitcoind -daemon -pid=/var/lib/bitcoind/newbitcoind.pid \
--conf=/etc/bitcoin/newbitcoin.conf -datadir=/var/lib/bitcoind -disablewallet
+PIDFile=/var/lib/bitcoind/avaloncoind.pid
+ExecStart=/usr/bin/bitcoind -daemon -pid=/var/lib/bitcoind/avaloncoind.pid \
+-conf=/etc/bitcoin/avaloncoin.conf -datadir=/var/lib/bitcoind -disablewallet
 
 Restart=always
 PrivateTmp=true

@@ -145,8 +145,8 @@ void setupAmountWidget(QLineEdit *widget, QWidget *parent)
 
 bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 {
-    // return if URI is not valid or is no newbitcoin: URI
-    if(!uri.isValid() || uri.scheme() != QString("newbitcoin"))
+    // return if URI is not valid or is no avaloncoin: URI
+    if(!uri.isValid() || uri.scheme() != QString("avaloncoin"))
         return false;
 
     SendCoinsRecipient rv;
@@ -206,13 +206,13 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 
 bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
 {
-    // Convert newbitcoin:// to newbitcoin:
+    // Convert avaloncoin:// to avaloncoin:
     //
-    //    Cannot handle this later, because newbitcoin:// will cause Qt to see the part after // as host,
+    //    Cannot handle this later, because avaloncoin:// will cause Qt to see the part after // as host,
     //    which will lower-case it (and thus invalidate the address).
-    if(uri.startsWith("newbitcoin://", Qt::CaseInsensitive))
+    if(uri.startsWith("avaloncoin://", Qt::CaseInsensitive))
     {
-        uri.replace(0, 10, "newbitcoin:");
+        uri.replace(0, 10, "avaloncoin:");
     }
     QUrl uriInstance(uri);
     return parseBitcoinURI(uriInstance, out);
@@ -220,7 +220,7 @@ bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
 
 QString formatBitcoinURI(const SendCoinsRecipient &info)
 {
-    QString ret = QString("newbitcoin:%1").arg(info.address);
+    QString ret = QString("avaloncoin:%1").arg(info.address);
     int paramCount = 0;
 
     if (info.amount)
@@ -427,7 +427,7 @@ bool openBitcoinConf()
     
     configFile.close();
     
-    /* Open newbitcoin.conf with the associated application */
+    /* Open avaloncoin.conf with the associated application */
     return QDesktopServices::openUrl(QUrl::fromLocalFile(boostPathToQString(pathConfig)));
 }
 

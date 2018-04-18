@@ -9,5 +9,5 @@ Exec=bitcoin-qt %u
 Terminal=false
 Type=Application
 Icon=bitcoin128
-MimeType=x-scheme-handler/newbitcoin;
+MimeType=x-scheme-handler/avaloncoin;
 Categories=Office;Finance;

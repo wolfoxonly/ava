@@ -53,7 +53,7 @@ Build NewBitcoin
 Running
 -------
 
-NewBitcoin is now available at `./src/newbitcoind`
+NewBitcoin is now available at `./src/avaloncoind`
 
 Before running, it's recommended you create an RPC configuration file.
 
@@ -61,7 +61,7 @@ Before running, it's recommended you create an RPC configuration file.
 
     chmod 600 "$HOME/Library/Application Support/NewBitcoin/NewBitcoin.conf"
 
-The first time you run newbitcoind, it will start downloading the blockchain. This process could take several hours.
+The first time you run avaloncoind, it will start downloading the blockchain. This process could take several hours.
 
 You can monitor the download process by looking at the debug.log file:
 
@@ -70,9 +70,9 @@ You can monitor the download process by looking at the debug.log file:
 Other commands:
 -------
 
-    ./src/newbitcoind -daemon # Starts the bitcoin daemon.
-    ./src/newbitcoin-cli --help # Outputs a list of command-line options.
-    ./src/newbitcoin-cli help # Outputs a list of RPC commands when the daemon is running.
+    ./src/avaloncoind -daemon # Starts the bitcoin daemon.
+    ./src/avaloncoin-cli --help # Outputs a list of command-line options.
+    ./src/avaloncoin-cli help # Outputs a list of RPC commands when the daemon is running.
 
 Using Qt Creator as IDE
 ------------------------

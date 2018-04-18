@@ -448,10 +448,10 @@ Then when building, override the remote URLs that gbuild would otherwise pull fr
 ```bash
 
 cd /some/root/path/
-git clone https://github.com/avaloncoin/newbitcoin-detached-sigs.git
+git clone https://github.com/avaloncoin/avaloncoin-detached-sigs.git
 
 BTCPATH=/some/root/path/avaloncoin
-SIGPATH=/some/root/path/newbitcoin-detached-sigs
+SIGPATH=/some/root/path/avaloncoin-detached-sigs
 
 ./bin/gbuild --url avaloncoin=${BTCPATH},signature=${SIGPATH} ../avaloncoin/contrib/gitian-descriptors/gitian-win-signer.yml
 ```
@@ -468,9 +468,9 @@ When you execute `gsign` you will get an error from GPG, which can be ignored. C
 in `gitian.sigs` to your signing machine and do
 
 ```bash
-    gpg --detach-sign ${VERSION}-linux/${SIGNER}/newbitcoin-linux-build.assert
-    gpg --detach-sign ${VERSION}-win/${SIGNER}/newbitcoin-win-build.assert
-    gpg --detach-sign ${VERSION}-osx-unsigned/${SIGNER}/newbitcoin-osx-build.assert
+    gpg --detach-sign ${VERSION}-linux/${SIGNER}/avaloncoin-linux-build.assert
+    gpg --detach-sign ${VERSION}-win/${SIGNER}/avaloncoin-win-build.assert
+    gpg --detach-sign ${VERSION}-osx-unsigned/${SIGNER}/avaloncoin-osx-build.assert
 ```
 
 This will create the `.sig` files that can be committed together with the `.assert` files to assert your
