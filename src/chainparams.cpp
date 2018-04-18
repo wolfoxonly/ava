@@ -91,12 +91,12 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         strNetworkID = "main";
-        consensus.nSubsidyHalvingInterval = 210000;
-        consensus.BIP34Height = 227931;
+        consensus.nSubsidyHalvingInterval = 2100000;
+        consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256S("0x000000000000024b89b42a942fe0d9fea3bb44ab7bd1b19115dd6a759c0808b8");
-        consensus.BIP65Height = 388381; // 000000000000000004c2b624ed5d7756c508d90fd0da2c7c679febfa6c4735f0
-        consensus.BIP66Height = 363725; // 00000000000000000379eaa19dce8c9b722d46ae6a57c2f1a988119488b50931
-        consensus.BTGHeight = 501225; // Around 10/25/2017 12:00 UTC
+        consensus.BIP65Height = 1;
+        consensus.BIP66Height = 1;
+        consensus.BTGHeight = 1;
         consensus.BTGPremineWindow = 1;
         consensus.BTGPremineEnforceWhitelist = false;
         consensus.powLimit       = uint256S("01ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
@@ -143,7 +143,7 @@ public:
         pchMessageStart[0] = 0xf9;
         pchMessageStart[1] = 0xbe;
         pchMessageStart[2] = 0xb4;
-        pchMessageStart[3] = 0xd8;//0xd9
+        pchMessageStart[3] = 0xd7;
         nDefaultPort = 18880; // different port than Bitcoin
         nPruneAfterHeight = 100000;
         const size_t N = 200, K = 9;
@@ -153,6 +153,9 @@ public:
         nEquihashK = K;
 
         genesis = CreateGenesisBlock(1231006505, 2083236893, 0x1d00ffff, 1, 50 * COIN * COIN_SCALE);
+	while(false){
+
+	}
         consensus.hashGenesisBlock = genesis.GetHash(consensus);
         assert(consensus.hashGenesisBlock == uint256S("0x000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"));
         assert(genesis.hashMerkleRoot == uint256S("0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"));
@@ -165,10 +168,6 @@ public:
         vSeeds.emplace_back("2.avaloncoin.org", false);
         vSeeds.emplace_back("3.avaloncoin.org", false);
         vSeeds.emplace_back("4.avaloncoin.org", false);
-        vSeeds.emplace_back("1.manghao.com", false);
-        vSeeds.emplace_back("2.manghao.com", false);
-        vSeeds.emplace_back("3.manghao.com", false);
-        vSeeds.emplace_back("4.manghao.com", false);
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,0);  // prefix: 1
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);  // prefix: 3
@@ -176,7 +175,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x1E};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
 
-        vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
+        //vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
