@@ -27,12 +27,12 @@ NOTE: Building with Qt4 is still supported, however, could result in a broken UI
 Build NewBitcoin
 ------------------------
 
-1. Clone the NewBitcoin source code and cd into `BTCGPU`
+1. Clone the NewBitcoin source code and cd into `avaloncoin`
 
-        git clone https://github.com/BTCGPU/BTCGPU
-        cd BTCGPU
+        git clone https://github.com/avaloncoin/avaloncoin
+        cd avaloncoin
 
-2.  Build BTCGPU:
+2.  Build avaloncoin:
 
     Configure and build the headless bitcoin binaries as well as the GUI (if Qt is found).
 

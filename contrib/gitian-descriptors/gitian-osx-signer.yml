@@ -7,7 +7,7 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/BTCGPU/newbitcoin-detached-sigs.git"
+- "url": "https://github.com/avaloncoin/newbitcoin-detached-sigs.git"
   "dir": "signature"
 files:
 - "newbitcoin-osx-unsigned.tar.gz"

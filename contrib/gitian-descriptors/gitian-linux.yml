@@ -28,8 +28,8 @@ packages:
 - "ca-certificates"
 - "python"
 remotes:
-- "url": "https://github.com/BTCGPU/BTCGPU.git"
-  "dir": "BTCGPU"
+- "url": "https://github.com/avaloncoin/avaloncoin.git"
+  "dir": "avaloncoin"
 files: []
 script: |
 
@@ -113,7 +113,7 @@ script: |
   chmod +x ${WRAP_DIR}/${prog}
   done
 
-  cd BTCGPU
+  cd avaloncoin
   BASEPREFIX=`pwd`/depends
   # Build dependencies for each host
   for i in $HOSTS; do
