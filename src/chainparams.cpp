@@ -23,6 +23,7 @@
 
 #include "base58.h"
 #include <assert.h>
+#include <stdio.h>
 #include <boost/assign/list_of.hpp>
 
 #include "chainparamsseeds.h"
@@ -92,8 +93,8 @@ public:
     CMainParams() {
         strNetworkID = "main";
         consensus.nSubsidyHalvingInterval = 2100000;
-        consensus.BIP34Height = 1;
-        consensus.BIP34Hash = uint256S("0x000000000000024b89b42a942fe0d9fea3bb44ab7bd1b19115dd6a759c0808b8");
+        consensus.BIP34Height = 1000000;
+        consensus.BIP34Hash = uint256S("0x011b57f13cbc41cf2aef956905b062596d4f10bd32832cc4f51d9f74411cdae3");
         consensus.BIP65Height = 1;
         consensus.BIP66Height = 1;
         consensus.BTGHeight = 1;
@@ -101,7 +102,7 @@ public:
         consensus.BTGPremineEnforceWhitelist = false;
         consensus.powLimit       = uint256S("01ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.powLimitStart  = uint256S("00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.powLimitLegacy = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.powLimitLegacy = uint256S("01ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         
         //based on https://github.com/avaloncoin/avaloncoin/issues/78
         consensus.nPowAveragingWindow = 30;
@@ -115,6 +116,7 @@ public:
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 1916; // 95% of 2016
         consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespanLegacy / nPowTargetSpacing
+
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
@@ -130,7 +132,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1510704000; // November 15th, 2017.
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000723d3581fe1bd55373540a");
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000000000000000f");
 
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0x0000000000000000003b9ce759c2a087d52abc4266f8f4ebd6d768b89defa50a"); //477890
@@ -152,12 +154,25 @@ public:
         nEquihashN = N;
         nEquihashK = K;
 
-        genesis = CreateGenesisBlock(1231006505, 2083236893, 0x1d00ffff, 1, 50 * COIN * COIN_SCALE);
-	while(false){
-
-	}
-        consensus.hashGenesisBlock = genesis.GetHash(consensus);
-        assert(consensus.hashGenesisBlock == uint256S("0x000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"));
+        genesis = CreateGenesisBlock(1524215356, 51, 0x2001ffff, 1, 50 * COIN * COIN_SCALE);
+	uint32_t nNonce = 0;
+        while(false){// search genesis
+            static FILE * genesis_file = NULL; if (genesis_file == NULL) {genesis_file = fopen("genesis.info", "w");}
+            arith_uint256 hash = UintToArith256(genesis.GetHash(consensus));
+            arith_uint256 target;
+            target.SetCompact(0x2001ffff);
+            if (hash < target){
+                if(genesis_file != NULL){
+                    fprintf(genesis_file, "nonce: %s\npow:%s\ntarget:%s\nmerkle:%s\n\n" , genesis.nNonce.ToString().c_str() , hash.ToString().c_str() , target.ToString().c_str(), genesis.hashMerkleRoot.ToString().c_str());
+                    fclose(genesis_file); genesis_file = NULL;
+                    exit(0);
+                }
+            }
+	    nNonce ++;
+            genesis.nNonce = ArithToUint256(arith_uint256(nNonce));
+        }
+	consensus.hashGenesisBlock = genesis.GetHash(consensus);
+        assert(consensus.hashGenesisBlock == uint256S("0x011b57f13cbc41cf2aef956905b062596d4f10bd32832cc4f51d9f74411cdae3"));
         assert(genesis.hashMerkleRoot == uint256S("0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"));
 
         vFixedSeeds.clear();
@@ -279,8 +294,8 @@ public:
 
         genesis = CreateGenesisBlock(1296688602, 414098458, 0x1d00ffff, 1, 50 * COIN * COIN_SCALE);
         consensus.hashGenesisBlock = genesis.GetHash(consensus);
-        assert(consensus.hashGenesisBlock == uint256S("0x000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943"));
-        assert(genesis.hashMerkleRoot == uint256S("0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"));
+        //assert(consensus.hashGenesisBlock == uint256S("0x000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943"));
+        //assert(genesis.hashMerkleRoot == uint256S("0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -377,8 +392,8 @@ public:
 
         genesis = CreateGenesisBlock(1296688602, 2, 0x207fffff, 1, 50 * COIN * COIN_SCALE);
         consensus.hashGenesisBlock = genesis.GetHash(consensus);
-        assert(consensus.hashGenesisBlock == uint256S("0x0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206"));
-        assert(genesis.hashMerkleRoot == uint256S("0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"));
+        //assert(consensus.hashGenesisBlock == uint256S("0x0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206"));
+        //assert(genesis.hashMerkleRoot == uint256S("0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
