@@ -1,5 +1,8 @@
 *.tar.gz
-
+built/
+depends/sdk-sources
+depends/sources
+linux.sh
 *.exe
 src/bitcoin
 src/bgoldd
